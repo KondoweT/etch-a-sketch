@@ -1,4 +1,8 @@
-*{
+:root{
+    --module-dimensions: 24px;
+}
+
+*, *::after, *::before{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -18,9 +22,31 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     background-color: white;
 }
 .row{
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: var(--module-dimensions); 
+}
+
+.contols{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.module{
+    /* border: 0.5px black solid; */
+    height: var(--module-dimensions);
+    width: var(--module-dimensions);
+}
+
+button{
+    padding: 5px 10px;
+    margin: 10px;
+    font-size: 20px;
 }
