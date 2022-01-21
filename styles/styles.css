@@ -16,6 +16,7 @@ body{
     background-color: #e0dada;
 }
 
+/* styles container of grid */
 #container{
     width: 500px;
     height: 500px;
@@ -25,6 +26,8 @@ body{
     align-items: center;
     background-color: white;
 }
+
+/* styles rows of grid that hold individual modules */
 .row{
     display: flex;
     justify-content: center;
@@ -33,12 +36,23 @@ body{
     height: var(--module-dimensions); 
 }
 
+/* styles div which holds the buttons */
 .contols{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
 }
 
+header{
+    margin-top: 10px;
+}
+
+#copyright{
+    margin-top: 20px;
+}
+
+/* styles individual modules height and width */
 .module{
     /* border: 0.5px black solid; */
     height: var(--module-dimensions);

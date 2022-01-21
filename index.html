@@ -5,6 +5,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles/styles.css">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+        <link rel="manifest" href="images/site.webmanifest">
+        <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+
         <script src="scripts/scripts.js" defer></script>
         <title>Etch-A-Sketch</title>
     </head>
@@ -14,11 +23,17 @@
         </header>
         <main>
             <div class="contols">
+                <button id="monochrome">Monochrome</button>
+                <button id="rainbow">Rainbow</button>
                 <button id="resetBtn">Reset</button>
             </div>
             <div id="container"></div>
         </main>
-        <footer></footer>
+        <footer>
+            <h1 id="copyright">&copy;<script type="text/javascript">
+                document.write(new Date().getFullYear());
+              </script> KondoweT</h1>
+        </footer>
         
     </body>
 </html>

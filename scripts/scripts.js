@@ -3,15 +3,23 @@ const resetBtn = document.querySelector('#resetBtn');
 let counter = 25;
 let root = document.documentElement;
 
+// clears the grid and makes a new grid
 function reset(){
     gridRemover();
 
     let newCounterNum = Number(prompt('Enter any number from 1 and 100', "25"));
-    makeGrid(newCounterNum);
+    if(newCounterNum > 100 || newCounterNum < 1){
+        makeGrid(25)
+    }else if(newCounterNum === 0){
+        makeGrid(25);    
+    }else if(newCounterNum){
+        makeGrid(newCounterNum);
+    }
 
-    mouseHover();
+    mouseHoverRainbow();
 }
 
+// makes the grid
 function makeGrid(num){
     let dimensions = 490/num;
     let properDimen = dimensions.toFixed(1);
@@ -28,7 +36,8 @@ function makeGrid(num){
     }
 }
 
-function mouseHover(){
+// changes the color of module of grid to a random color
+function mouseHoverRainbow(){
     let modules = document.querySelectorAll('.module');
     modules.forEach(module=>{
         module.addEventListener('mouseover',(e)=>{
@@ -38,6 +47,7 @@ function mouseHover(){
     });
 }
 
+// removes last used grid in preparation for new grid to be created
 function gridRemover(){
     let rowRemoved = document.querySelectorAll(".row");
     rowRemoved.forEach((row)=>{
@@ -45,10 +55,24 @@ function gridRemover(){
     });
 }
 
+// changes the color of the module of grid to black
+function mouseHoverBlack(){
+    let modules = document.querySelectorAll('.module');
+    modules.forEach(module=>{
+        module.addEventListener('mouseover',(e)=>{
+            module.style.backgroundColor = "#000000";
+        });
+    });
+}
+
 makeGrid(counter);
 
-mouseHover();
-
+mouseHoverRainbow();
 
 resetBtn.addEventListener('click', reset);
 
+const rainbow = document.querySelector("#rainbow");
+rainbow.addEventListener('click', mouseHoverRainbow);
+
+const monoChrome = document.querySelector('#monochrome');
+monoChrome.addEventListener('click', mouseHoverBlack);
